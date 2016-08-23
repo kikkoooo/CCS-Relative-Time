@@ -3,10 +3,11 @@ var timer = {
   seconds: null,
   minutes: null,
   hour: null,
-  day: null,
+  date: null,
   month: null,
   year: null,
   meridiem: null,
+  day: null,
   get: function(type) {
     return timer[type];
   },
@@ -15,9 +16,10 @@ var timer = {
     timer.seconds = now.getSeconds();
     timer.minutes = now.getMinutes();
     timer.hour = now.getHours();
-    timer.day = now.getDay();
+    timer.day = now.getDate();
     timer.month = now.getMonth();
     timer.year = now.getFullYear();
+    timer.day = now.getDay();
     if (timer.hour > 11) {
       timer.meridiem = "PM";
     } else {
